@@ -13,36 +13,43 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="源文件\HyperLprHelper">
+      <UniqueIdentifier>{b93957e5-30d7-40b4-ab2e-d135921037b5}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="DemoHyperLPR-mfc.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="DemoHyperLPR-mfcDlg.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="stdafx.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="targetver.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="Resource.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="DemoHyperLPR-mfc.cpp">
+    <ClCompile Include="src\DemoHyperLPR-mfc.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="DemoHyperLPR-mfcDlg.cpp">
+    <ClCompile Include="src\DemoHyperLPR-mfcDlg.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="stdafx.cpp">
+    <ClCompile Include="src\stdafx.cpp">
       <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\HyperLprHelper\CNNRecognizer.cpp">
+      <Filter>源文件\HyperLprHelper</Filter>
+    </ClCompile>
+    <ClCompile Include="src\HyperLprHelper\FastDeskew.cpp">
+      <Filter>源文件\HyperLprHelper</Filter>
+    </ClCompile>
+    <ClCompile Include="src\HyperLprHelper\FineMapping.cpp">
+      <Filter>源文件\HyperLprHelper</Filter>
+    </ClCompile>
+    <ClCompile Include="src\HyperLprHelper\Pipeline.cpp">
+      <Filter>源文件\HyperLprHelper</Filter>
+    </ClCompile>
+    <ClCompile Include="src\HyperLprHelper\PlateDetection.cpp">
+      <Filter>源文件\HyperLprHelper</Filter>
+    </ClCompile>
+    <ClCompile Include="src\HyperLprHelper\PlateSegmentation.cpp">
+      <Filter>源文件\HyperLprHelper</Filter>
+    </ClCompile>
+    <ClCompile Include="src\HyperLprHelper\Recognizer.cpp">
+      <Filter>源文件\HyperLprHelper</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -60,5 +67,22 @@
     <Image Include="res\DemoHyperLPR-mfc.ico">
       <Filter>资源文件</Filter>
     </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\head\DemoHyperLPR-mfc.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\head\DemoHyperLPR-mfcDlg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\head\Resource.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\head\stdafx.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\head\targetver.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
