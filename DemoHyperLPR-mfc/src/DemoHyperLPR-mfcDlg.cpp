@@ -6,7 +6,11 @@
 #include "DemoHyperLPR-mfc.h"
 #include "DemoHyperLPR-mfcDlg.h"
 #include "afxdialogex.h"
-
+#include <windows.h>
+#include <winioctl.h>
+#include <setupapi.h>
+#include <fstream>
+#include <sstream>
 #ifdef _DEBUG
 #define new DEBUG_NEW
 #endif
@@ -347,6 +351,13 @@ HCURSOR CDemoHyperLPRmfcDlg::OnQueryDragIcon()
 }
 
 
+// 判断文件是否存在
+bool exists(const char *name) {
+	struct stat buffer;
+	return (stat(name, &buffer) == 0);
+}
+
+
 //定义模型文件
 using namespace pr;
 pr::PipelinePR prc("./model/cascade.xml",
@@ -357,22 +368,26 @@ pr::PipelinePR prc("./model/cascade.xml",
 long progress_pos_old = 0;
 // 用户点击开始识别按钮响应
 void CDemoHyperLPRmfcDlg::OnBnClickedStart()
-{
-	//SetTimer(1,100,NULL);
+{ 
 
 	// 只识别图片
 	if (!cb_is_think_video.GetCheck()) {
+ 
+		CString path;
+		et_file_path_image.GetWindowTextW(path);
+		string strPath;
+		 
+		strPath = CW2A(path.GetString());
+		if (!exists(strPath.c_str())) {
+			addLog("路径不存在");
+			return;
+		}
+
 		addLog("单图片识别");
 		mlThinkCount = 0; // 总识别次数置0
 		mdAveTimeAll = 0;
 		mlThinkCarCount = 0;
 		mdAveTimeCar = 0;
-		// "E:/MyComputer/Desktop/test/demo3.jpg"
-		// CT2CA()
-		CString path;
-		et_file_path_image.GetWindowTextW(path);
-		string strPath;
-		strPath = CW2A(path.GetString());
 		cv::Mat image = cv::imread(strPath);
 
 		thinkCarId2(image);
